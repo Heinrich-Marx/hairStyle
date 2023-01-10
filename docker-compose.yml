@@ -6,7 +6,7 @@ services:
     ports:
       - "8080:8080"
   frontend:
-    build: ./frontend/my-app
+    build: ./frontend
     container_name: api_frontend
     ports:
       - "8020:8020"
