@@ -12,10 +12,10 @@ const userRouter = Router()
 
 userRouter.post("/registration",
     expressValidator.body("email").isEmail(),
-    expressValidator.body("password").isLength({min: 3, max: 32}),
+    expressValidator.body("password").isLength({min: 4, max: 32}),
     registrationUserController)
-userRouter.post("/signIn", loginUserController)
-userRouter.post("/signOut", logoutUserController)
+userRouter.post("/logIn", loginUserController)
+userRouter.post("/logOut", logoutUserController)
 userRouter.get('/activate/:link', activateEmailController)
 userRouter.get('/refresh', refreshTokenController)
 userRouter.get("/users", getAllUsersController)

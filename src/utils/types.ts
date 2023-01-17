@@ -4,4 +4,4 @@ type TNullable<T> = T | null | undefined
 
 type TNil = null | undefined
 
-export {TAny, TNullable, TNil}
+export type {TAny, TNullable, TNil}
