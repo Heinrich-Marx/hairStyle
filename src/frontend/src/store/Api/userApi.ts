@@ -6,6 +6,7 @@ const userApi = (email:string, pass:string) => {
         password: pass
     })
         .then(function (response) {
+            console.log(1)
             console.log(response);
         })
         .catch(function (error) {
