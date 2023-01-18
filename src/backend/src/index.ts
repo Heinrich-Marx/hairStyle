@@ -5,6 +5,8 @@ import cors from "cors";
 import {userRouter} from "./user/endpoints/userEndpoints";
 import {errorMiddleware} from "./user/middelwares/error";
 import * as dotenv from "dotenv";
+import {schema} from "./user/schema/userSchema";
+import {graphqlHTTP} from "express-graphql";
 dotenv.config();
 // TODO fix express-graphql version
 
@@ -29,6 +31,8 @@ app.get("/", function (req, res) {
 
 const start = async () => {
 	try {
+
+
 		// TODO fix env types
 		const url = process.env.DB_URL;
 		if (url) {
