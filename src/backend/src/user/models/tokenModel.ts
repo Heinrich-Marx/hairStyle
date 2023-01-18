@@ -1,4 +1,4 @@
-import {Schema} from "mongoose"
+import {Schema} from "mongoose";
 import {EModelsName} from "./utils/modelsNameEnum";
 import {schemaCreator} from "../../utils/modelUtils/schemaCreator";
 import {modelCreator} from "../../utils/modelUtils/modelCreator";
@@ -10,10 +10,10 @@ interface ITokenSchema {
 }
 
 const tokenSchema = schemaCreator<ITokenSchema>({
-    user: {type: Schema.Types.ObjectId, ref: EModelsName.user},
-    refreshToken: {type: String, unique: true}
-})
+	user: {type: Schema.Types.ObjectId, ref: EModelsName.user},
+	refreshToken: {type: String, unique: true}
+});
 
-const tokenModel = modelCreator(EModelsName.token, tokenSchema)
+const tokenModel = modelCreator(EModelsName.token, tokenSchema);
 
-export { tokenModel }
+export { tokenModel };

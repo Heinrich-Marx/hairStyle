@@ -5,9 +5,9 @@ interface IInitialState {
 }
 
 const initialState: IInitialState = {
-    users: []
-}
+	users: []
+};
 
-export {initialState}
+export {initialState};
 
-export type {IUser}
+export type {IUser};

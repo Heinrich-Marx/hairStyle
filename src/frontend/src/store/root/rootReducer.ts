@@ -1,7 +1,7 @@
 import userReducer from "../user/userReducer";
 
 const rootReducer = {
-    user: userReducer
-}
+	user: userReducer
+};
 
-export {rootReducer}
+export {rootReducer};

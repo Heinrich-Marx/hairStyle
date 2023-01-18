@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start:dev": "nodemon src/index.ts"
+    "start:dev": "nodemon src/index.ts",
+    "lint": "npx eslint src/"
   },
   "author": "",
   "license": "ISC",
@@ -37,6 +38,9 @@
     "@types/node": "^18.11.18",
     "@types/nodemailer": "^6.4.7",
     "@types/uuid": "^9.0.0",
+    "@typescript-eslint/eslint-plugin": "^5.48.2",
+    "@typescript-eslint/parser": "^5.48.2",
+    "eslint": "^8.32.0",
     "lodash": "^4.17.21",
     "nodemon": "^2.0.20",
     "ts-node": "^10.9.1"

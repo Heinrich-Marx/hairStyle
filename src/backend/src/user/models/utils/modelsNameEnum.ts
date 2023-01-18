@@ -3,4 +3,4 @@ enum EModelsName {
     token = "Token"
 }
 
-export {EModelsName}
+export {EModelsName};

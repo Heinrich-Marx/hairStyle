@@ -5,30 +5,30 @@ import {validateAccessToken} from "../utils/validateTokens";
 
 // TODO Fix it
 const authMiddleware = (req: Request, res: Response, next: NextFunction) => {
-    try {
-        const authHeader = req.headers.authorization
+	try {
+		const authHeader = req.headers.authorization;
 
-        if (isNil(authHeader)) {
-            return next(ApiError.UnauthorizedError())
-        }
+		if (isNil(authHeader)) {
+			return next(ApiError.UnauthorizedError());
+		}
 
-        const accessToken = authHeader.split(" ")[1]
+		const accessToken = authHeader.split(" ")[1];
 
-        if (isNil(accessToken)) {
-            return next(ApiError.UnauthorizedError())
-        }
-        const userData = validateAccessToken(accessToken)
+		if (isNil(accessToken)) {
+			return next(ApiError.UnauthorizedError());
+		}
+		const userData = validateAccessToken(accessToken);
 
-        if (isNil(userData)) {
-            return next(ApiError.UnauthorizedError())
-        }
+		if (isNil(userData)) {
+			return next(ApiError.UnauthorizedError());
+		}
 
-         req.user = userData
+		req.user = userData;
 
-        next()
-    } catch (e) {
-        return next(ApiError.UnauthorizedError())
-    }
-}
+		next();
+	} catch (e) {
+		return next(ApiError.UnauthorizedError());
+	}
+};
 
-export {authMiddleware}
+export {authMiddleware};
