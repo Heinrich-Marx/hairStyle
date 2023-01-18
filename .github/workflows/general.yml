@@ -24,7 +24,12 @@ jobs:
       - name: Install Node.js dependencies
         run: npm ci
 
-      - name: Run linters
-        run: src/backend npx eslint src | src/frontend npx eslint src
+      - name: Run front linters
+        working-director: ./src/frontend
+        run: npx eslint src
+
+      - name: Run back linters
+        working-director: ./src/backend
+        run: npx eslint src
 
 
