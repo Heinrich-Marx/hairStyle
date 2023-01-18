@@ -5,6 +5,8 @@ import cors from "cors";
 import {userRouter} from "./user/endpoints/userEndpoints";
 import {errorMiddleware} from "./user/middelwares/error";
 import * as dotenv from "dotenv";
+import {schema} from "./user/schema/userSchema";
+import {graphqlHTTP} from "express-graphql";
 dotenv.config();
 // TODO fix express-graphql version
 
