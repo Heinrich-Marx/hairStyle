@@ -7,16 +7,16 @@ import {userApi} from "../Api/userApi";
 
 interface IAction {type: string, payload:IUser}
 
-const createUserEpic: TEpic<TAny> = (action$, state$) => action$.pipe(
-    ofType("@USER/ADD_USER"),
-    mergeMap(({payload}) => {
+const createUserEpic: TEpic<TAny> = (action$) => action$.pipe(
+	ofType("@USER/ADD_USER"),
+	mergeMap(({payload}) => {
 
-        userApi(payload.email, payload.password)
-        return EMPTY
-    })
+		userApi(payload.email, payload.password);
+		return EMPTY;
+	})
 
-)
+);
 
-export {createUserEpic}
+export {createUserEpic};
 
-export type {IAction}
+export type {IAction};

@@ -10,12 +10,12 @@ interface IUserSchema {
 }
 
 const userSchema = schemaCreator<IUserSchema>({
-    email: {type: String, unique: true, required: true},
-    password: {type: String, required: true},
-    isActivated: {type: Boolean, default: false},
-    activationLink: {type: String}
-})
+	email: {type: String, unique: true, required: true},
+	password: {type: String, required: true},
+	isActivated: {type: Boolean, default: false},
+	activationLink: {type: String}
+});
 
-const userModel = modelCreator(EModelsName.user, userSchema)
+const userModel = modelCreator(EModelsName.user, userSchema);
 
-export { userModel, IUserSchema }
+export { userModel, IUserSchema };

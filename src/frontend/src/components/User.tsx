@@ -4,24 +4,25 @@ import {ADD_USER} from "../store/user/userReducer";
 import {Input} from "./Input";
 
 const User = memo(() => {
-    const dispatch = useDispatch()
+	const dispatch = useDispatch();
 
-    const handleClick = () => dispatch(ADD_USER({password: pass, email: email}))
+	const handleClick = () => dispatch(ADD_USER({password: pass, email: email}));
 
-    const [email, setEmail] = useState("")
-    const [pass, setPass] = useState("")
+	const [email, setEmail] = useState("");
+	const [pass, setPass] = useState("");
 
-    return (
-        <>
-            <div>
-                <Input value={email} handle={setEmail} />
-                <Input value={pass} handle={setPass} />
-            </div>
+	return (
+		<>
+			<div>
+				<Input value={email} handle={setEmail} />
+				<Input value={pass} handle={setPass} />
+			</div>
 
-            <button onClick={handleClick}>{"add user"}</button>
-        </>
-    )
-})
+			<button onClick={handleClick}>{"add user"}</button>
+		</>
+	);
+});
+User.displayName="User";
 
-export {User}
+export {User};
 
