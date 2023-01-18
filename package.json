@@ -1,0 +1,22 @@
+{
+  "name": "hairstyle",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start backend:dev": "cd src/backend && npm run start:dev",
+    "start frontend:dev": "cd src/frontend && npm run start:dev",
+    "postinstall": "(cd src/backend && npm install) && (cd src/frontend && npm install)"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Heinrich-Marx/hairStyle.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.0.3"
+  }
+}
+
+
