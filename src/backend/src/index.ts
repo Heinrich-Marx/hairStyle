@@ -29,6 +29,8 @@ app.get("/", function (req, res) {
 
 const start = async () => {
 	try {
+
+
 		// TODO fix env types
 		const url = process.env.DB_URL;
 		if (url) {
