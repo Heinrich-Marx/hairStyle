@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start backend:dev": "cd src/backend && npm run start:dev",
-    "start frontend:dev": "cd src/frontend && npm run start:dev"
+    "start frontend:dev": "cd src/frontend && npm run start:dev",
+    "postinstall": "(cd src/backend && npm install) && (cd src/frontend && npm install)"
   },
   "repository": {
     "type": "git",
@@ -17,3 +18,5 @@
     "dotenv": "^16.0.3"
   }
 }
+
+

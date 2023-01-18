@@ -8,7 +8,6 @@ import * as dotenv from "dotenv"
 import {schema} from "./user/schema/userSchema";
 import {graphqlHTTP} from "express-graphql";
 dotenv.config()
-
 // TODO fix express-graphql version
 
 const app = express()
