@@ -25,11 +25,11 @@ jobs:
         run: npm ci
 
       - name: Run front linters
-        working-director: ./src/frontend
+        working-directory: ./src/frontend
         run: npx eslint src
 
       - name: Run back linters
-        working-director: ./src/backend
+        working-directory: ./src/backend
         run: npx eslint src
 
 
