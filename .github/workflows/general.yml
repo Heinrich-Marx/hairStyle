@@ -1,10 +1,10 @@
-name: Backend CI
+name: General CI
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "master" ]
   pull_request:
-    branches: [ "main" ]
+    branches: [ "master" ]
 
 jobs:
   run-linters:
@@ -25,8 +25,6 @@ jobs:
         run: npm ci
 
       - name: Run linters
-        uses: wearerequired/lint-action@v2
-        with:
-          eslint: true
+        run: src/backend npx eslint src | src/frontend npx eslint src
 
 
