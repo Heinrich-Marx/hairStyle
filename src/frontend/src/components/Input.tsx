@@ -6,8 +6,7 @@ interface IInput {
     className?: string
 }
 
-// @ts-ignore
-const Input = memo(({value, handle, className}) => {
+const Input = memo<IInput>(({value, handle, className}) => {
 	const onChange = (e:ChangeEvent<HTMLInputElement>) => handle(e.target.value);
 
 	return <input value={value} onChange={onChange} className={className}/>;
