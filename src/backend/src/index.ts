@@ -5,8 +5,8 @@ import cors from "cors";
 import {userRouter} from "./user/endpoints/userEndpoints";
 import {errorMiddleware} from "./user/middelwares/error";
 import * as dotenv from "dotenv";
-import {schema} from "./user/schema/userSchema";
 import {graphqlHTTP} from "express-graphql";
+import { schema } from "./graphql/rootSchema";
 dotenv.config();
 // TODO fix express-graphql version
 
@@ -15,10 +15,10 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(cors());
 app.use("/api", userRouter);
-// app.use('/graphql', graphqlHTTP({
-//     graphiql: true,
-//     schema: schema
-// }))
+app.use("/graphql", graphqlHTTP({
+	graphiql: true,
+	schema
+}));
 app.use(errorMiddleware);
 mongoose.set("strictQuery", false);
 
