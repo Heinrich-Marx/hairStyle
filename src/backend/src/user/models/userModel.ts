@@ -18,4 +18,4 @@ const userSchema = schemaCreator<IUserSchema>({
 
 const userModel = modelCreator(EModelsName.user, userSchema);
 
-export { userModel, IUserSchema };
+export { userModel, IUserSchema, userSchema };

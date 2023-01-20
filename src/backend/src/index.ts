@@ -8,7 +8,6 @@ import * as dotenv from "dotenv";
 import {graphqlHTTP} from "express-graphql";
 import { schema } from "./graphql/rootSchema";
 dotenv.config();
-// TODO fix express-graphql version
 
 const app = express();
 app.use(express.json());
@@ -31,8 +30,6 @@ app.get("/", function (req, res) {
 
 const start = async () => {
 	try {
-
-
 		// TODO fix env types
 		const url = process.env.DB_URL;
 		if (url) {

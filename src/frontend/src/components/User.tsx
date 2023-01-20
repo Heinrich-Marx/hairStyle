@@ -1,12 +1,12 @@
 import {memo, useState} from "react";
 import {useDispatch} from "react-redux";
-import {ADD_USER} from "../store/user/userReducer";
 import {Input} from "./Input";
+import {createUserAction} from "../store/user/actions";
 
 const User = memo(() => {
 	const dispatch = useDispatch();
 
-	const handleClick = () => dispatch(ADD_USER({password: pass, email: email}));
+	const handleClick = () => dispatch(createUserAction({password: pass, email: email}));
 
 	const [email, setEmail] = useState("");
 	const [pass, setPass] = useState("");

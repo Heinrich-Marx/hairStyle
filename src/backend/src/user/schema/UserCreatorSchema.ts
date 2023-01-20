@@ -1,5 +1,5 @@
-import {GraphQLBoolean, GraphQLID, GraphQLNonNull, GraphQLObjectType, GraphQLString} from "graphql/type";
-import {registrationUserService} from "../services/userService";
+import {GraphQLBoolean, GraphQLID, GraphQLList, GraphQLNonNull, GraphQLObjectType, GraphQLString} from "graphql/type";
+import {getAllUsersService, registrationUserService} from "../services/userService";
 import {TAny} from "../../../../utils/types";
 
 const UserCreatorType = new GraphQLObjectType({
@@ -47,4 +47,15 @@ const UserCreatorSchema = {
 	}
 };
 
-export {UserCreatorSchema};
+const getAllUsersSchema = {
+	users: {
+		type: GraphQLList(UserCreatorType),
+		resolve: () => getAllUsersService()
+	}
+};
+
+
+
+
+
+export {UserCreatorSchema, getAllUsersSchema};
