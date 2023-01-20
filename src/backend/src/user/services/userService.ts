@@ -85,6 +85,6 @@ const refreshTokenUserService = async (token: string) => {
 	return token;
 };
 
-const getAllUsersService = async () => userModel.find();
+const getAllUsersService = async () => userModel.find({});
 
 export {registrationUserService, activateUserService, loginUserService, logoutUserService, refreshTokenUserService, getAllUsersService};

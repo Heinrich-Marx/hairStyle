@@ -1,22 +1,16 @@
 import {TEpic} from "../root/rootEpic";
-import {ofType} from "redux-observable";
-import {EMPTY, mergeMap} from "rxjs";
-import {IUser} from "./initialState";
+import {from, filter, switchMap, EMPTY} from "rxjs";
 import {TAny} from "../../../../utils/types";
-import {userApi} from "../Api/userApi";
-
-interface IAction {type: string, payload:IUser}
+import {createUserApi} from "../Api/userApi";
+import {createUserAction} from "./actions";
 
 const createUserEpic: TEpic<TAny> = (action$) => action$.pipe(
-	ofType("@USER/ADD_USER"),
-	mergeMap(({payload}) => {
+	filter(createUserAction.match),
+	switchMap(({payload}) => {
+		from(createUserApi(payload.email, payload.password));
 
-		userApi(payload.email, payload.password);
 		return EMPTY;
 	})
-
 );
 
 export {createUserEpic};
-
-export type {IAction};
