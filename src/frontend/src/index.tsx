@@ -3,6 +3,8 @@ import ReactDOM from "react-dom/client";
 import App from "./App";
 import {Provider} from "react-redux";
 import {rootStore} from "./store/root/rootStore";
+import {ApolloProvider} from "@apollo/client";
+import {client} from "./store/apollo";
 
 
 const root = ReactDOM.createRoot(
@@ -10,8 +12,10 @@ const root = ReactDOM.createRoot(
 );
 root.render(
 	<Provider store={rootStore}>
-		<React.StrictMode>
-			<App />
-		</React.StrictMode>
+		<ApolloProvider client={client}>
+			<React.StrictMode>
+				<App />
+			</React.StrictMode>
+		</ApolloProvider>
 	</Provider>
 );
