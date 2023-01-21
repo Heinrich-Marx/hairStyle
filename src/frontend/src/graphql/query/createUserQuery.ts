@@ -1,14 +1,18 @@
 import {gql} from "@apollo/client";
 
-const createUserQuery = gql(`
-	query($email: String!, $password: String!) {
-  		user(email: $email, password: $password) {
+const createUSerMutation = gql(`
+	mutation($email: String!, $password: String!){
+  		userCreator(email: $email, password: $password){
     		user{
-      			email
-      			id
-    		}
+     			email
+     			id
+     			isActivated
+  				activationLink
+   			}
+			accessToken
+			refreshToken
   		}
 	}
 `);
 
-export {createUserQuery};
+export {createUSerMutation};

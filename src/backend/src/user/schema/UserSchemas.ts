@@ -5,43 +5,28 @@ import {TAny} from "../../../../utils/types";
 const UserCreatorType = new GraphQLObjectType({
 	name: "user",
 	fields: {
-		email: {
-			type: GraphQLNonNull(GraphQLString)
-		},
-		id: {
-			type: GraphQLNonNull(GraphQLID)
-		},
-		isActivated: {
-			type: GraphQLNonNull(GraphQLBoolean)
-		}
+		email: {type: GraphQLNonNull(GraphQLString)},
+		id: {type: GraphQLNonNull(GraphQLID)},
+		isActivated: {type: GraphQLBoolean},
+		activationLink: {type:GraphQLString}
 	}
 });
 
 const UserCreatorQuery = new GraphQLObjectType({
-	name: "createdUser",
+	name: "newUser",
 	fields: {
-		user: {
-			type: UserCreatorType
-		},
-		accessToken: {
-			type: GraphQLString
-		},
-		refreshToken: {
-			type: GraphQLString
-		}
+		user: {type: UserCreatorType},
+		accessToken: {type: GraphQLString},
+		refreshToken: {type: GraphQLString}
 	}
 });
 
-const UserCreatorSchema = {
-	user: {
+const addUserMutation = {
+	userCreator: {
 		type: UserCreatorQuery,
 		args: {
-			email: {
-				type: GraphQLNonNull(GraphQLString)
-			},
-			password: {
-				type: GraphQLNonNull(GraphQLString)
-			}
+			email: {type: GraphQLNonNull(GraphQLString)},
+			password: {type: GraphQLNonNull(GraphQLString)}
 		},
 		resolve: (parent:TAny, args: TAny) => registrationUserService(args.email, args.password)
 	}
@@ -58,4 +43,4 @@ const getAllUsersSchema = {
 
 
 
-export {UserCreatorSchema, getAllUsersSchema};
+export {addUserMutation, getAllUsersSchema};
