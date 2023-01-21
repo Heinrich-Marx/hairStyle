@@ -1,5 +1,5 @@
 import {Response, Request, NextFunction} from "express";
-import {ApiError} from "../exceptions/error";
+import {ApiError} from "../../user/exceptions/error";
 
 const errorMiddleware = (err: Error, req: Request, res: Response, next: NextFunction) => {
 

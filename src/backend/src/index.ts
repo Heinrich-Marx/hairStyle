@@ -3,7 +3,7 @@ import mongoose, {connect} from "mongoose";
 import cookieParser from "cookie-parser";
 import cors from "cors";
 import {userRouter} from "./user/endpoints/userEndpoints";
-import {errorMiddleware} from "./user/middelwares/error";
+import {errorMiddleware} from "./utils/middelwares/error";
 import * as dotenv from "dotenv";
 import {graphqlHTTP} from "express-graphql";
 import { schema } from "./graphql/rootSchema";
