@@ -1,6 +1,6 @@
 import {TEpic} from "../root/rootEpic";
 import {from, filter, switchMap, EMPTY} from "rxjs";
-import {TAny} from "../../../../utils/types";
+import {TAny} from "../../../../common/utils/types";
 import {createUserApi} from "../Api/userApi";
 import {createUserAction} from "./actions";
 

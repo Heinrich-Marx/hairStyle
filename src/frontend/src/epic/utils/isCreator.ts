@@ -1,5 +1,5 @@
 import {filter, Observable} from "rxjs";
-import {TAny} from "../../../../utils/types";
+import {TAny} from "../../../../common/utils/types";
 import {Action} from "redux";
 import {ActionCreatorWithPayload} from "@reduxjs/toolkit";
 import {PayloadAction} from "@reduxjs/toolkit/src/createAction";
