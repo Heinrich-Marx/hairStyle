@@ -6,7 +6,8 @@
   "scripts": {
     "start backend:dev": "cd src/backend && npm run start:dev",
     "start frontend:dev": "cd src/frontend && npm run start:dev",
-    "postinstall": "(cd src/backend && npm install) && (cd src/frontend && npm install)"
+    "postinstall": "(cd src/backend && npm install) && (cd src/frontend && npm install)",
+    "build": "tsc -b"
   },
   "repository": {
     "type": "git",
