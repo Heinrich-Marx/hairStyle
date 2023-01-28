@@ -1,21 +1,19 @@
-import {EModelsName} from "./utils/modelsNameEnum";
-import {schemaCreator} from "../../utils/modelUtils/schemaCreator";
-import {modelCreator} from "../../utils/modelUtils/modelCreator";
+import { Field, ID, ObjectType } from "@nestjs/graphql";
 
-interface IUserSchema {
-    email: string;
-    password: string;
-    isActivated: boolean;
-    activationLink: string
+@ObjectType()
+export class UserModel {
+  @Field(type => ID)
+  id: string;
+
+  @Field()
+  email: string;
+
+  @Field()
+  isActivated: boolean;
+
+  @Field()
+  activationLink: string
+
+  @Field()
+  userRole: string
 }
-
-const userSchema = schemaCreator<IUserSchema>({
-	email: {type: String, unique: true, required: true},
-	password: {type: String, required: true},
-	isActivated: {type: Boolean, default: false},
-	activationLink: {type: String}
-});
-
-const userModel = modelCreator(EModelsName.user, userSchema);
-
-export { userModel, IUserSchema, userSchema };
