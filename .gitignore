@@ -1,3 +1,5 @@
 node_modules
 src/backend/.env
 src/frontend/.env
+src/frontend/node_modules
+src/backend/node_modules
