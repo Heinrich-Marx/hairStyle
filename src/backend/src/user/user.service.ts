@@ -59,19 +59,15 @@ export class UserService {
       await user.save();
   }
 
+
   async delete (id: string) {
     const user = this.getUserById(id)
 
     if (isNil(user)) {
       throw UserError.BadRequest("Incorrect user Id");
     }
-    return this.userModel.deleteOne({_id: id}, (err, res) => {
-      if (err) {
-        throw UserError.ServerError("Error with deleted");
-      }
 
-      return res
-    })
+    return this.userModel.deleteOne({_id: id})
   }
 
   async login (email: string, password: string) {
